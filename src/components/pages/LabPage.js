@@ -26,7 +26,6 @@ const CarouselView = () => {
                         alabContent.pictureUrls.map((picture) => (
                             <div>
                                 <img src={picture.url} alt="carousel" />
-                                <p className="legend">{picture.legend}</p>
                             </div>
                         ))
                     }

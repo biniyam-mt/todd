@@ -22,14 +22,16 @@ export const HomePage = () => {
     return (
         <>
             <Cover scroll={scroll} />
-            <MiddleContainer>
-                <Biography />
-                <ContactInfo />
-            </MiddleContainer>
-            <RecentNewsContainer>
-                <RecentUpdates />
-                <LinkedInNews />
-            </RecentNewsContainer>
+            <BottomHalf>
+                <MiddleContainer>
+                    <Biography />
+                    <ContactInfo />
+                </MiddleContainer>
+                <RecentNewsContainer>
+                    <RecentUpdates />
+                    <LinkedInNews />
+                </RecentNewsContainer>
+            </BottomHalf>
 
         </>
 
@@ -291,49 +293,58 @@ const CoverContainer = styled.div({
     flexDirection: "column",
     justifyContent: "end",
     alignItems: "center",
+
 })
 
 const BgName = styled('div')`
-                // border:1px solid blue;
-                width: 100%;
-                font-size: 1000%;
-                font-family: "Gotham black";
-                color: white;
-                text-align: center;
-                position: absolute;
-                padding-bottom: 180px;
-                padding-right: ${(props) => props.scroll / 4}px;
+    // border:1px solid blue;
+    font-size: 1000%;
+    font-family: "Gotham black";
+    color: white;
+    text-align: center;
+    position: absolute;
+    padding-bottom: 180px;
+    padding-right: ${(props) => props.scroll / 4 > 350 ? 350 : props.scroll / 4}px;
+    // padding-right: 212px
 
 
                 `
 
-const Portrait = styled('div')`
-                // border:1px solid red;
-                position: absolute;
-                // width: 75%;
-                // max-height:800px;
-                // right: 0px
-
-                `
 
 const JellyBean = styled('div')`
-                // border:1px solid black;
-                width: 100%;
-                height: 700px;
-                position: absolute;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-                padding-bottom: 60px;
-                padding-left: ${(props) => props.scroll}px;
+    // border:1px solid black;
+    // width: 100%;
+    height: 700px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 60px;
+    padding-left: ${(props) => props.scroll > 500 ? 500 : props.scroll}px;
+
+                `
+const Portrait = styled('div')`
+    // border:1px solid red;
+    position: absolute;
+    // width: 75%;
+    // max-height:800px;
+    // right: 0px
+
                 `
 
+const BottomHalf = styled.div({
+    // border: "1px solid green",
+    display: "flex",
+    flexDirection: "column",
+    // justifyContent: "space-between",
+    alignItems: "center",
+})
 const MiddleContainer = styled.div({
     // border: "1px solid green",
     padding: "15px",
     margin: "15px",
-    // height: 800,
+    maxWidth: "1500px",
     // backgroundColor: "#edf1f9",
     // paddingTop: 50,
     display: "flex",
@@ -344,6 +355,7 @@ const MiddleContainer = styled.div({
 
 const RecentNewsContainer = styled.div({
     // border: "1px solid green",
+    maxWidth: "1500px",
     padding: "15px",
     margin: "15px",
     display: "flex",

@@ -4,7 +4,7 @@ import { NewsPage } from "./pages/NewsPage";
 import { ResearchPage } from "./pages/ResearchPage";
 import { TeachingPage } from "./pages/TeachingPage";
 
-export const Content = ({ activeTab }) => {
+export const Router = ({ activeTab }) => {
     const renderSwitch = (activeTab) => {
         switch (activeTab) {
             case "home":
