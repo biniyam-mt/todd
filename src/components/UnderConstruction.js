@@ -6,6 +6,7 @@ export const UnderConstruction = () => {
     return (
         <Container>
             <FontAwesomeIcon icon={faPersonDigging} size="6x" />
+            <br />
             Under Construction
         </Container>
     )

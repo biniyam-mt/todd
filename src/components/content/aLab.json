@@ -1,11 +1,28 @@
 {
-    "pictureUrls": [],
+    "pictureUrls": [
+        {
+            "url": "https://www.pace.edu/sites/default/files/styles/16_9_1600x900/public/2022-01/seidenberg-hero-computer-science_0.jpg?h=854a7be2&itok=7ZEge4S3",
+            "legend": "picture legend"
+        },
+        {
+            "url": "https://images.unsplash.com/photo-1558403194-611308249627?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "legend": "picture legend"
+        },
+        {
+            "url": "https://images.unsplash.com/photo-1552581234-26160f608093?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "legend": "picture legend"
+        },
+        {
+            "url": "https://images.unsplash.com/photo-1552960504-34e1e1be3f53?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80",
+            "legend": "picture legend"
+        }
+    ],
     "bio": "",
     "students": [
         {
             "fullName": "Lauren Biernacki",
             "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
-            "photoUrl": "./lauren.png",
+            "photoUrl": "./lauren2.png",
             "email": "lbiernac@umich.edu",
             "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
             "twitterLink": "https://twitter.com/Lmbiernacki",
@@ -23,9 +40,39 @@
             "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
         },
         {
+            "fullName": "Yonathan Fisseha",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./yonathan.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        },
+        {
             "fullName": "Biniyam Tiruye",
             "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
             "photoUrl": "./biniyam.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        },
+        {
+            "fullName": "Meron Demissie",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./meron.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        },
+        {
+            "fullName": "Donayam Benti",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./donayam.png",
             "email": "lbiernac@umich.edu",
             "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
             "twitterLink": "https://twitter.com/Lmbiernacki",

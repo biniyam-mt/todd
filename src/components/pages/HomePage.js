@@ -51,7 +51,7 @@ const Cover = ({ scroll }) => {
                     TODD AUSTIN
                 </BgName>
                 <Portrait>
-                    <img src="./todd.png" alt="todd" width={"100%"} style={{ maxHeight: "800px" }} />
+                    <img src="./todd2.png" alt="todd" height={"900px"} style={{}} />
                 </Portrait>
                 <Socials />
             </CoverContainer >
@@ -310,9 +310,9 @@ const BgName = styled('div')`
 const Portrait = styled('div')`
                 // border:1px solid red;
                 position: absolute;
-                width: 75%;
-                max-height:800px;
-                right: 0px
+                // width: 75%;
+                // max-height:800px;
+                // right: 0px
 
                 `
 

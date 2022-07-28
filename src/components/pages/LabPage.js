@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import alabContent from "../content/aLab.json"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from "react-responsive-carousel"
 export const LabPage = () => {
     return (<>
-        <Carousel />
+        <CarouselView />
         <Content>
             <LabBio />
             <Students />
@@ -14,11 +16,22 @@ export const LabPage = () => {
     </>
     )
 }
-const Carousel = () => {
+const CarouselView = () => {
     return (
         <CarouselContainer>
+            <CarouselDiv>
 
-            <img style={{ boxShadow: "0px 0px 9px  #b9b9b9" }} src="https://www.pace.edu/sites/default/files/styles/16_9_1600x900/public/2022-01/seidenberg-hero-computer-science_0.jpg?h=854a7be2&itok=7ZEge4S3" alt="" width={"1200px"} />
+                <Carousel autoPlay={"true"} infiniteLoop={"true"} interval={"5000"} dynamicHeight={"true"}>
+                    {
+                        alabContent.pictureUrls.map((picture) => (
+                            <div>
+                                <img src={picture.url} alt="carousel" />
+                                <p className="legend">{picture.legend}</p>
+                            </div>
+                        ))
+                    }
+                </Carousel>
+            </CarouselDiv>
         </CarouselContainer >
     )
 }
@@ -51,7 +64,14 @@ const Student = ({ student, alignRight }) => {
     return (
         <StudentDiv alignRight={alignRight}>
             <StudentPhotoContainer>
-                <img src={student.photoUrl} alt="student" height={"300px"} />
+                <ImageFrame>
+                    <img src={student.photoUrl} alt="student" height={"300px"} />
+                </ImageFrame>
+                <JellyBean>
+                    <svg xmlns='http://www.w3.org/2000/svg' height='100%' viewBox='0 0 3890.303 2752.572'>
+                        <path id='Path_1' data-name='Path 1' d='M1698.446-70.623S1639.3,155.428,819.96,214.089-251.867,1318.881,966.628,1715.621s3015.725,52.321,3051.585-1302.1C4049.339-762.119,3006.728-1105.8,2320.371-747.287A1065.278,1065.278,0,0,0,2043.81-539.048C1882.614-292.806,1698.446-70.623,1698.446-70.623Z' transform='translate(-128.591 882.483)' fill='#FADFC6' />
+                    </svg>
+                </JellyBean>
             </StudentPhotoContainer>
             <StudentBioContainer alignRight={alignRight}>
                 <CustomParagraph title={student.fullName}>
@@ -97,15 +117,19 @@ const Content = styled.div({
 })
 
 const CarouselContainer = styled.div({
-    // border: "1px solid red",
-    padding: "70px 0px 20px 0px",
-    // margin: "15px 0px",
+    // border: "2px solid red",
+    padding: "70px 0px 0px 0px",
     display: "flex",
     justifyContent: "center",
+    alignItems: "center",
     backgroundColor: "#edf1f9",
-
-
 })
+const CarouselDiv = styled.div({
+    // border: "1px solid yellow",
+    width: "1200px",
+    // height: "500px"
+})
+
 
 const BioContainer = styled.div({
     // border: "1px solid red",
@@ -139,6 +163,24 @@ const StudentPhotoContainer = styled.div({
     // border: "1px solid green",
     // display: "flex",
     // justifyContent: "center",
+
+})
+const ImageFrame = styled.div({
+    // border: "1px solid green",
+    zIndex: 991,
+    position: "absolute"
+
+    // display: "flex",
+    // justifyContent: "center",
+
+})
+const JellyBean = styled.div({
+    // border: "1px solid green",
+    // marginTop: "0px",
+    zIndex: 990,
+    paddingTop: "50px",
+    height: "200px",
+    transform: "rotate(300deg)"
 
 })
 const StudentBioContainer = styled.div`
