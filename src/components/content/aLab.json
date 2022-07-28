@@ -1,6 +1,37 @@
 {
-    "pictures": [],
+    "pictureUrls": [],
     "bio": "",
-    "students": [],
+    "students": [
+        {
+            "fullName": "Lauren Biernacki",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./lauren.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        },
+        {
+            "fullName": "Shibo Chen",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./shibo.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        },
+        {
+            "fullName": "Biniyam Tiruye",
+            "bio": "Cillum elit consectetur reprehenderit officia duis cupidatat dolor aliquip consequat anim consequat. Amet quis eiusmod fugiat minim id et consequat labore exercitation ea nostrud culpa sit. Aute in duis reprehenderit amet deserunt incididunt proident sunt sunt tempor pariatur.",
+            "photoUrl": "./biniyam.png",
+            "email": "lbiernac@umich.edu",
+            "websiteLink": "http://www-personal.umich.edu/~lbiernac/",
+            "twitterLink": "https://twitter.com/Lmbiernacki",
+            "linkedInLink": "https://www.linkedin.com/in/laurenbiernacki/",
+            "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
+        }
+    ],
     "alumni": []
 }

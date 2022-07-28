@@ -98,7 +98,7 @@ const Biography = () => {
     return (
         <div style={{ width: "50%", marginRight: "15px" }}>
 
-            <CustomParagraph title={"BIBLOGRAPHY"}>
+            <CustomParagraph title={"BIOGRAPHY"}>
                 {basicInfo.personalBiography}
             </CustomParagraph>
         </div>
@@ -263,7 +263,7 @@ const SocialContainer = styled.div({
     flexDirection: "row",
     justifyContent: "space-around",
     alignItems: "center",
-    zIndex: 2000,
+    zIndex: 999,
     padding: "20px 0px"
 })
 
