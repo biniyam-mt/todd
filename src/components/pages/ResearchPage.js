@@ -1,15 +1,14 @@
 import styled from "styled-components"
+import { UnderConstruction } from "../UnderConstruction"
 
 export const ResearchPage = () => {
     return (
         <Content>
-            Research
+            <UnderConstruction />
         </Content>
     )
 }
 
 const Content = styled.div({
-    height: 1900,
-    backgroundColor: "#edf1f9",
     paddingTop: 50
 })

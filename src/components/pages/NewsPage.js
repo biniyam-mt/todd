@@ -1,15 +1,15 @@
+import { UnderConstruction } from "../UnderConstruction"
 import styled from "styled-components"
 
 export const NewsPage = () => {
     return (
         <Content>
-            news
+            <UnderConstruction />
         </Content>
     )
 }
 
 const Content = styled.div({
-    height: 1900,
-    backgroundColor: "#edf1f9",
+
     paddingTop: 50
 })
