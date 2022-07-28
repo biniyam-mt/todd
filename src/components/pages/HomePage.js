@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faLocationDot, faPhone, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import basicInfo from "../content/basicInfo.json"
-import linkedInFeed from "../content/linkedInFeed.json"
 
 
 export const HomePage = () => {
@@ -67,19 +66,29 @@ const Socials = () => {
         <SocialContainer>
 
             <SocialItems>
-                <FontAwesomeIcon icon={faUserGraduate} size="xl" />
+                <a href={basicInfo.googleScholarLink} rel="noreferrer" target="_blank">
+                    <FontAwesomeIcon icon={faUserGraduate} size="xl" />
+                </a>
             </SocialItems>
             <SocialItems>
-                <FontAwesomeIcon icon={faLinkedin} size="xl" />
+                <a href={basicInfo.linkedInLink} rel="noreferrer" target="_blank">
+                    <FontAwesomeIcon icon={faLinkedin} size="xl" />
+                </a>
             </SocialItems>
             <SocialItems>
-                <FontAwesomeIcon icon={faTwitter} size="xl" />
+                <a href={basicInfo.twitterLink} rel="noreferrer" target="_blank">
+                    <FontAwesomeIcon icon={faTwitter} size="xl" />
+                </a>
             </SocialItems>
             <SocialItems>
-                <FontAwesomeIcon icon={faGithub} size="xl" />
+                <a href={basicInfo.githubLink} rel="noreferrer" target="_blank">
+                    <FontAwesomeIcon icon={faGithub} size="xl" />
+                </a>
             </SocialItems>
             <SocialItems>
-                <FontAwesomeIcon icon={faYoutube} size="xl" />
+                <a href={basicInfo.youTubeLink} rel="noreferrer" target="_blank">
+                    <FontAwesomeIcon icon={faYoutube} size="xl" />
+                </a>
             </SocialItems>
 
         </SocialContainer>
@@ -100,7 +109,7 @@ const Biography = () => {
 const ContactInfo = () => {
     return (
         <InfoContainer>
-            <CustomParagraph title={"BASIC INFORMATION"} >
+            <CustomParagraph title={"CONTACT INFORMATION"} display="full">
 
                 <b>
                     {basicInfo.fullName}
@@ -146,16 +155,52 @@ const ContactInfo = () => {
 }
 
 const RecentUpdates = () => {
+    const [recentNewsJSON, setRecentNewsJSON] = useState([]);
+
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/biniyam-mt/content/main/recentNews.json')
+            .then(res => res.json())
+            .then(json => {
+                //json vaiable contains object with data
+                setRecentNewsJSON(json);
+            })
+    }, [])
     return (
-        <UpdatesContainer>
+        <UpdatesMainContainer>
             <CustomTitle title={"RECENT NEWS"} />
             <hr />
-            News
+            <UpdatesContainer>
 
-        </UpdatesContainer>
+                {
+                    recentNewsJSON.map((news) => (
+                        <NewsItems>
+                            <NewsImageContainer>
+                                <img src={news.imgUrl !== "" ? news.imgUrl : "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png"} alt="news thumbnail" width={"100%"} style={{ width: "200px", border: "1px solid #909090" }} />
+                            </NewsImageContainer>
+                            <CustomParagraph title={news.title}>
+                                {news.body}
+                            </CustomParagraph>
+                        </NewsItems>
+                    ))
+                }
+            </UpdatesContainer>
+
+        </UpdatesMainContainer>
     )
 }
 const LinkedInNews = () => {
+    const [linkedInFeedJSON, setLinkedInFeedJSON] = useState([]);
+
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/biniyam-mt/content/main/linkedInFeed.json')
+            .then(res => res.json())
+            .then(json => {
+                //json vaiable contains object with data
+                setLinkedInFeedJSON(json);
+            })
+    }, [])
+
+
 
 
     return (
@@ -164,8 +209,8 @@ const LinkedInNews = () => {
             <hr />
             <FeedContainer>
 
-                {linkedInFeed.map((feed) => (< FeedItem >
-                    {/* <iframe src="https://www.linkedin.com/embed/feed/update/urn:li:share:6954184073858678785" height="832px" width="95%" frameBorder="0" allowFullScreen="" title="Embedded post"></iframe> */}
+                {linkedInFeedJSON.map((feed) => (< FeedItem >
+
                     <div dangerouslySetInnerHTML={{ __html: feed }} />
                 </FeedItem>))
                 }
@@ -233,7 +278,8 @@ const SocialItems = styled.div({
     alignItems: "center",
     backgroundColor: "white",
     color: "#707070",
-    margin: "0px 35px"
+    margin: "0px 35px",
+    cursor: "pointer"
 })
 
 const CoverContainer = styled.div({
@@ -307,16 +353,6 @@ const RecentNewsContainer = styled.div({
 })
 
 
-const UpdatesContainer = styled.div({
-    // border: "1px solid red",
-    width: "60%",
-    padding: "0px 10px",
-    // margin: "15px",
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "start",
-})
 const LinkedInNewsContainer = styled.div({
     // border: "1px solid green",
     width: "550px",
@@ -350,4 +386,36 @@ const FeedItem = styled.div({
     justifyContent: "start",
     alignItems: "center",
     padding: "10px 0px",
+})
+const UpdatesMainContainer = styled.div({
+    // border: "1px solid red",
+    width: "60%",
+    // padding: "0px 10px",
+    // margin: "15px",
+    // display: "flex",
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    // alignItems: "start",
+})
+
+const UpdatesContainer = styled.div({
+    // border: "1px solid red",
+    // width: "60%",
+    // padding: "0px 10px",
+    // margin: "15px",
+
+})
+
+const NewsItems = styled.div({
+    // border: "1px solid red",
+    // padding: "0px 10px",
+    margin: "20px 0px",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "start",
+    alignItems: "start",
+})
+
+const NewsImageContainer = styled.div({
+    marginRight: "15px"
 })

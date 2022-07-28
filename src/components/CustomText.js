@@ -1,12 +1,11 @@
 import { useState } from "react";
 import styled from "styled-components"
 
-export const CustomParagraph = ({ title, children }) => {
+export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
     let limit = 300
-    let trimmedContent = `${children.slice(0, limit)} ...`
-    const [content, setContent] = useState(children);
-    const [detail, setDetail] = useState("full");
-
+    let trimmedContent = children.length > limit ? `${children.slice(0, limit)} ...` : children;
+    const [content, setContent] = useState(display === "full" ? children : trimmedContent);
+    const [detail, setDetail] = useState(display === "full" ? "full" : "trimmed");
 
 
     return (
