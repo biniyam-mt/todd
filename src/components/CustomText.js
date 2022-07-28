@@ -65,7 +65,7 @@ const Beacon = styled('div')`
 `
 const Body = styled('div')`
 font-family: Gotham;
-color: #707070;
+color: #505050;
 line-height: 24px;
 
 
