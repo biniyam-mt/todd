@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { CustomParagraph, CustomTitle } from "../CustomText"
+import { CustomParagraph, CustomTitle } from "../custom/CustomText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
@@ -7,8 +7,8 @@ import alabContent from "../content/aLab.json"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel"
 import { COLORS_LIGHT } from "../Values"
-import { CustomSeparator } from "../CustomSeparator"
-import { A } from "../CustomElements"
+import { CustomSeparator } from "../custom/CustomSeparator"
+import { A } from "../custom/CustomElements"
 export const LabPage = () => {
     return (<>
         <CarouselView />

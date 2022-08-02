@@ -1,12 +1,12 @@
 import styled from "styled-components"
 import { useEffect, useState } from "react"
-import { CustomParagraph, CustomTitle } from "../CustomText"
+import { CustomParagraph, CustomTitle } from "../custom/CustomText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faLocationDot, faPhone, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import basicInfo from "../content/basicInfo.json"
 import { COLORS_LIGHT } from "../Values"
-import { A } from "../CustomElements"
+import { A } from "../custom/CustomElements"
 
 
 export const HomePage = () => {

@@ -2,7 +2,7 @@ import { useCallback, useMemo, useState } from "react"
 import styled from "styled-components"
 import publicationRecord from "../content/publications.json"
 import { COLORS_LIGHT } from "../Values"
-import { PublicationList } from "./PublicationList"
+import { PublicationList } from "../PublicationList"
 
 export const PublicationsPage = () => {
     const [sortBy, setSortBy] = useState("year");

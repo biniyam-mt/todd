@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components"
-import { COLORS_LIGHT } from "./Values";
+import { COLORS_LIGHT } from "../Values";
 
 export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
     let limit = 300

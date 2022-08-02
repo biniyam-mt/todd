@@ -1,9 +1,9 @@
 import { useState } from "react"
 import styled from "styled-components"
-import { TalksList } from "./TalksList";
-import { SoftwaresList } from "./SoftwaresList";
+import { TalksList } from "../TalksList";
+import { SoftwaresList } from "../SoftwaresList";
 import { PublicationsPage } from "./PublicationsPage";
-import { CustomParagraph } from "../CustomText";
+import { CustomParagraph } from "../custom/CustomText";
 import { COLORS_LIGHT } from "../Values";
 
 export const ResearchPage = () => {

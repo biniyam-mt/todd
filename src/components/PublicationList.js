@@ -2,8 +2,8 @@ import { faAward, faFileInvoice, faQuoteRight } from "@fortawesome/free-solid-sv
 import { faFilePdf } from "@fortawesome/free-regular-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
-import { COLORS_LIGHT } from "../Values"
-import { A } from "../CustomElements"
+import { COLORS_LIGHT } from "./Values"
+import { A } from "./custom/CustomElements"
 export const PublicationList = ({ publicationRecord }) => {
     console.log("List rendered!")
 
