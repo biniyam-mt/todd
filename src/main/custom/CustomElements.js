@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { COLORS_LIGHT } from "../Values";
+import { COLORS_LIGHT } from "./Values";
 
 export const A = styled.a`
     text-decoration: none;
@@ -11,8 +11,4 @@ export const A = styled.a`
     &:hover{
         color: ${COLORS_LIGHT.ACCENT};
     }
-`
-
-export const IFrame = styled.a`
-    border: 0
 `

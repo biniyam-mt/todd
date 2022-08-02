@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faLocationDot, faPhone, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import basicInfo from "../content/basicInfo.json"
-import { COLORS_LIGHT } from "../Values"
+import { COLORS_LIGHT } from "../custom/Values"
 import { A } from "../custom/CustomElements"
 
 
@@ -231,18 +231,11 @@ const LinkedInNews = () => {
 const InfoContainer = styled.div({
     // border: "1px solid red",
     width: "30%",
-    // height: 800,
-    // paddingTop: 50,
-    // display: "flex",
-    // flexDirection: "column",
-    // justifyContent: "center",
-    // alignItems: "center",
 })
 const AddressContainer = styled.div({
     color: COLORS_LIGHT.DARK_GRAY,
     lineHeight: "24px",
     // border: "1px solid green",
-
 })
 const AddressItems = styled.div({
     // border: "1px solid green",
@@ -256,7 +249,6 @@ const AddressItems = styled.div({
 const AddressIcons = styled.div({
     // border: "1px solid green",
     marginRight: "10px"
-
 })
 const SocialContainer = styled.div({
     // border: "1px solid green",
@@ -305,10 +297,7 @@ const BgName = styled('div')`
     position: absolute;
     padding-bottom: 180px;
     padding-right: ${(props) => props.scroll / 4 > 350 ? 350 : props.scroll / 4}px;
-    // padding-right: 212px
-
-
-                `
+`
 
 
 const JellyBean = styled('div')`
@@ -322,22 +311,16 @@ const JellyBean = styled('div')`
     align-items: center;
     padding-bottom: 60px;
     padding-left: ${(props) => props.scroll > 500 ? 500 : props.scroll}px;
-
-                `
+`
 const Portrait = styled('div')`
     // border:1px solid red;
     position: absolute;
-    // width: 75%;
-    // max-height:800px;
-    // right: 0px
-
-                `
+`
 
 const BottomHalf = styled.div({
     // border: "1px solid green",
     display: "flex",
     flexDirection: "column",
-    // justifyContent: "space-between",
     alignItems: "center",
 })
 const MiddleContainer = styled.div({
@@ -345,7 +328,6 @@ const MiddleContainer = styled.div({
     padding: "15px",
     margin: "15px",
     maxWidth: "1500px",
-    // paddingTop: 50,
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
@@ -367,20 +349,12 @@ const RecentNewsContainer = styled.div({
 const LinkedInNewsContainer = styled.div({
     // border: "1px solid green",
     width: "550px",
-    // padding: "0px 10px",
     marginLeft: "35px",
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "start",
 })
 
 
 const FeedContainer = styled.div({
     // border: "1px solid red",
-    // width: "50%",
-    // padding: "0px 10px",
-    // margin: "0px 10px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "start",
@@ -401,25 +375,14 @@ const FeedItem = styled.div({
 const UpdatesMainContainer = styled.div({
     // border: "1px solid red",
     width: "60%",
-    // padding: "0px 10px",
-    // margin: "15px",
-    // display: "flex",
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "start",
 })
 
 const UpdatesContainer = styled.div({
     // border: "1px solid red",
-    // width: "60%",
-    // padding: "0px 10px",
-    // margin: "15px",
-
 })
 
 const NewsItems = styled.div({
     // border: "1px solid red",
-    // padding: "0px 10px",
     margin: "20px 0px",
     display: "flex",
     flexDirection: "row",

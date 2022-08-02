@@ -1,9 +1,9 @@
 import './App.css';
-import {Root} from './components/Root'
+import { Root } from './main/Root'
 
 function App() {
   return (
-    <Root/>
+    <Root />
   );
 }
 

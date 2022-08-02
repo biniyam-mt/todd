@@ -1,5 +1,5 @@
-import { Nav } from "./Nav"
-import { Footer } from "./Footer"
+import { Nav } from "./components/Nav"
+import { Footer } from "./components/Footer"
 import { BrowserRouter as BRouter, Route, Routes } from 'react-router-dom'
 import { TeachingPage } from "./pages/TeachingPage"
 import { LabPage } from "./pages/LabPage"

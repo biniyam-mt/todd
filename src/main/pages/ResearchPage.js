@@ -1,10 +1,10 @@
 import { useState } from "react"
 import styled from "styled-components"
-import { TalksList } from "../TalksList";
-import { SoftwaresList } from "../SoftwaresList";
+import { TalksList } from "../components/TalksList";
+import { SoftwaresList } from "../components/SoftwaresList";
 import { PublicationsPage } from "./PublicationsPage";
 import { CustomParagraph } from "../custom/CustomText";
-import { COLORS_LIGHT } from "../Values";
+import { COLORS_LIGHT } from "../custom/Values";
 
 export const ResearchPage = () => {
     const [activeTab, setActiveTab] = useState("publications");

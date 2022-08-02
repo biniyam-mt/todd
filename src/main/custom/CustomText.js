@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components"
-import { COLORS_LIGHT } from "../Values";
+import { COLORS_LIGHT } from "./Values";
 
 export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
     let limit = 300
@@ -25,10 +25,6 @@ export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
 }
 
 export const CustomTitle = ({ title }) => {
-
-
-
-
     return (
         <CustomDiv>
             <Header>
@@ -67,8 +63,6 @@ const Beacon = styled('div')`
 const Body = styled('div')`
 color: ${COLORS_LIGHT.DARK_GRAY};
 line-height: 24px;
-
-
 `
 
 const ReadMore = styled('div')`

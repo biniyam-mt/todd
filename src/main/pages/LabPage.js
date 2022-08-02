@@ -6,7 +6,7 @@ import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
 import alabContent from "../content/aLab.json"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel"
-import { COLORS_LIGHT } from "../Values"
+import { COLORS_LIGHT } from "../custom/Values"
 import { CustomSeparator } from "../custom/CustomSeparator"
 import { A } from "../custom/CustomElements"
 export const LabPage = () => {

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link, useLocation } from 'react-router-dom'
-import { COLORS_LIGHT } from "./Values";
+import { COLORS_LIGHT } from "../custom/Values";
 
 export const Nav = () => {
 

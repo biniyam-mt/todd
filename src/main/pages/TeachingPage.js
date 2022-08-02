@@ -1,4 +1,4 @@
-import { UnderConstruction } from "../UnderConstruction"
+import { UnderConstruction } from "../components/UnderConstruction"
 import styled from "styled-components"
 
 export const TeachingPage = () => {

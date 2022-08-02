@@ -1,5 +1,5 @@
 import styled from "styled-components"
-import { COLORS_LIGHT } from "../Values"
+import { COLORS_LIGHT } from "./Values"
 
 export const CustomSeparator = ({ tag }) => {
     return (
