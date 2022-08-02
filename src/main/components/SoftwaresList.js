@@ -1,7 +1,9 @@
+import { UnderConstruction } from "./UnderConstruction"
+
 export const SoftwaresList = () => {
     return (
         <div>
-            softwares
+            <UnderConstruction />
         </div>
     )
 }

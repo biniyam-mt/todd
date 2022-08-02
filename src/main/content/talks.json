@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Microarchitectural Side Channel Attacks",
+        "description": "Tutorial",
+        "url": "https://www.youtube.com/embed/dLkyuUrAuzg"
+    },
+    {
+        "title": "Toward Durable System Security",
+        "description": "May 2021 - MEST Center Webinar",
+        "url": "https://www.youtube.com/embed/zN8Xp53Sz7g"
+    },
+    {
+        "title": "Morpheus II - The Director's Cut",
+        "description": "HotChips 2021 Presentation",
+        "url": "https://www.youtube.com/embed/s617RZXP0fw"
+    },
+    {
+        "title": "Preparing for a Post Moore's Law World",
+        "description": "(MICRO-2016 Keynote)",
+        "url": "https://www.youtube.com/embed/PEcB3Uoj-kY"
+    },
+    {
+        "title": "From Security to Immunity",
+        "description": "UC-Davis ECE Invited Lecture",
+        "url": "https://www.youtube.com/embed/v2mLm2QqsVo"
+    },
+    {
+        "title": "Robust System Design",
+        "description": "Lecture 2021-06-09",
+        "url": "https://www.youtube.com/embed/18pshB2lq6U"
+    },
+    {
+        "title": "Memory For Secure Computing (Part 1)",
+        "description": "IEDM 2020 Short Course",
+        "url": "https://www.youtube.com/embed/x9Pyb0-EnCw"
+    },
+    {
+        "title": "Memory For Secure Computing (Part 1)",
+        "description": "IEDM 2020 Short Course",
+        "url": "https://www.youtube.com/embed/xUgRFkdSZNk"
+    },
+    {
+        "title": "VIP-Bench Presentation",
+        "description": "IEEE SEED 2021",
+        "url": "https://www.youtube.com/embed/Obdcfoxi0t8"
+    }
+]
