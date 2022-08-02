@@ -194,6 +194,7 @@ const RecentUpdates = () => {
 }
 const LinkedInNews = () => {
     const [linkedInFeedJSON, setLinkedInFeedJSON] = useState([]);
+    const [limit, setLimit] = useState(2);
 
     useEffect(() => {
         fetch('https://raw.githubusercontent.com/biniyam-mt/content/main/linkedInFeed.json')
@@ -213,12 +214,15 @@ const LinkedInNews = () => {
             <hr />
             <FeedContainer>
 
-                {linkedInFeedJSON.map((feed) => (< FeedItem >
+                {linkedInFeedJSON.slice(0, limit).map((feed) => (< FeedItem >
 
                     <div dangerouslySetInnerHTML={{ __html: feed }} />
                 </FeedItem>))
                 }
             </FeedContainer>
+            <SeeMoreDiv onClick={() => {
+                setLimit(limit + 2);
+            }}>See More</SeeMoreDiv>
 
         </LinkedInNewsContainer >
     )
@@ -228,6 +232,17 @@ const LinkedInNews = () => {
 
 
 // styled components ------------------------------------------------------------------
+const SeeMoreDiv = styled.div`
+    // border: 1px solid red;
+        color: ${COLORS_LIGHT.ACCENT};
+        text-align: center;
+        cursor:pointer ;
+    padding: 10px;
+    &:hover{
+        color: ${COLORS_LIGHT.MEDIUM_GRAY}
+    }
+`
+
 const InfoContainer = styled.div({
     // border: "1px solid red",
     width: "30%",
