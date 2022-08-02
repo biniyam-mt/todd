@@ -1,5 +1,4 @@
 import { Nav } from "./components/Nav"
-import { Footer } from "./components/Footer"
 import { BrowserRouter as BRouter, Route, Routes } from 'react-router-dom'
 import { TeachingPage } from "./pages/TeachingPage"
 import { LabPage } from "./pages/LabPage"
@@ -18,7 +17,7 @@ export const Root = () => {
                     <Route exact path="/toddaustin/teaching" element={<TeachingPage />} />
                 </Routes>
             </BRouter>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     )
 }
