@@ -35,30 +35,30 @@ export const Nav = () => {
 
             </TitleContainer>
             <NavItemsContainer>
-                <NavItem active={currentPath === "/toddaustin/research"}>
-                    <NavBeacon active={currentPath === "/toddaustin/research"} />
-                    <Link to={"/toddaustin/research"}>
+                <Link to={"/toddaustin/research"}>
+                    <NavItem active={currentPath === "/toddaustin/research"}>
+                        <NavBeacon active={currentPath === "/toddaustin/research"} />
                         <NavText>
                             RESEARCH
                         </NavText>
-                    </Link>
-                </NavItem>
-                <NavItem active={currentPath === "/toddaustin/austin-lab"}>
-                    <NavBeacon active={currentPath === "/austin-lab"} />
-                    <Link to={"/toddaustin/austin-lab"}>
+                    </NavItem>
+                </Link>
+                <Link to={"/toddaustin/austin-lab"}>
+                    <NavItem active={currentPath === "/toddaustin/austin-lab"}>
+                        <NavBeacon active={currentPath === "/toddaustin/austin-lab"} />
                         <NavText>
                             AUSTIN-LAB
                         </NavText>
-                    </Link>
-                </NavItem>
-                <NavItem active={currentPath === "/toddaustin/teaching"}>
-                    <NavBeacon active={currentPath === "/toddaustin/teaching"} />
-                    <Link to={"/toddaustin/teaching"}>
+                    </NavItem>
+                </Link>
+                <Link to={"/toddaustin/teaching"}>
+                    <NavItem active={currentPath === "/toddaustin/teaching"}>
+                        <NavBeacon active={currentPath === "/toddaustin/teaching"} />
                         <NavText>
                             TEACHING
                         </NavText>
-                    </Link>
-                </NavItem>
+                    </NavItem>
+                </Link>
             </NavItemsContainer>
             <DarkModeContainer>
                 {/* DARK MODE */}
@@ -114,8 +114,8 @@ const NavItemsContainer = styled.div({
 })
 
 const NavItem = styled('div')`
+// border: 1px solid green;
     height: 33px;
-    // border: 1px solid green;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
