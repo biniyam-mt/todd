@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { COLORS_LIGHT } from "./Values"
 export const Footer = () => {
     return (
         <FooterContainer>
@@ -12,7 +13,7 @@ export const Footer = () => {
 const FooterContainer = styled.div({
     // border: "1px solid red",
     width: "100%",
-    backgroundColor: "#707070",
+    backgroundColor: COLORS_LIGHT.MEDIUM_GRAY,
     display: "flex",
     height: 50,
     flexDirection: "row",

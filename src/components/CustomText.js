@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components"
+import { COLORS_LIGHT } from "./Values";
 
 export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
     let limit = 300
@@ -44,8 +45,9 @@ const CustomDiv = styled('div')`
 `
 const CustomTitleDiv = styled('div')`
 font-size: 100%;
-font-family: Gotham;
-font-weight: 500;
+font-weight: 600;
+font-family: Montserrat;
+padding: 1px;
 `
 
 const Header = styled('div')`
@@ -54,25 +56,23 @@ display: flex;
 margin-bottom: 20px;
 flex-direction: row;
 justify-content: start;
-align-items: start;
+align-items: center;
 `
 const Beacon = styled('div')`
-    background-color: #ff7055;
-    height: 13px;
+    background-color: ${COLORS_LIGHT.ACCENT};
+    height: 12px;
     width: 4px;
     margin-right: 5px
 `
 const Body = styled('div')`
-font-family: Gotham;
-color: #505050;
+color: ${COLORS_LIGHT.DARK_GRAY};
 line-height: 24px;
 
 
 `
 
 const ReadMore = styled('div')`
-font-family: Gotham;
-color: #dd3f21;
+color: ${COLORS_LIGHT.ACCENT};
 margin-top: 15px;
 cursor: pointer
 `

@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faLocationDot, faPhone, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faLinkedin, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons"
 import basicInfo from "../content/basicInfo.json"
+import { COLORS_LIGHT } from "../Values"
+import { A } from "../CustomElements"
 
 
 export const HomePage = () => {
@@ -46,14 +48,14 @@ const Cover = ({ scroll }) => {
                 <JellyBean scroll={scroll}>
 
                     <svg xmlns='http://www.w3.org/2000/svg' height='100%' viewBox='0 0 3890.303 2752.572'>
-                        <path id='Path_1' data-name='Path 1' d='M1698.446-70.623S1639.3,155.428,819.96,214.089-251.867,1318.881,966.628,1715.621s3015.725,52.321,3051.585-1302.1C4049.339-762.119,3006.728-1105.8,2320.371-747.287A1065.278,1065.278,0,0,0,2043.81-539.048C1882.614-292.806,1698.446-70.623,1698.446-70.623Z' transform='translate(-128.591 882.483)' fill='#FADFC6' />
+                        <path id='Path_1' data-name='Path 1' d='M1698.446-70.623S1639.3,155.428,819.96,214.089-251.867,1318.881,966.628,1715.621s3015.725,52.321,3051.585-1302.1C4049.339-762.119,3006.728-1105.8,2320.371-747.287A1065.278,1065.278,0,0,0,2043.81-539.048C1882.614-292.806,1698.446-70.623,1698.446-70.623Z' transform='translate(-128.591 882.483)' fill={COLORS_LIGHT.PRIMARY_SHAPES} />
                     </svg>
                 </JellyBean>
                 <BgName scroll={scroll}>
                     TODD AUSTIN
                 </BgName>
                 <Portrait>
-                    <img src="./todd2.png" alt="todd" height={"900px"} style={{}} />
+                    <img src={basicInfo.photoUrl} alt="todd" height={"900px"} style={{}} />
                 </Portrait>
                 <Socials />
             </CoverContainer >
@@ -68,29 +70,29 @@ const Socials = () => {
         <SocialContainer>
 
             <SocialItems>
-                <a href={basicInfo.googleScholarLink} rel="noreferrer" target="_blank">
+                <A href={basicInfo.googleScholarLink} rel="noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faUserGraduate} size="xl" />
-                </a>
+                </A>
             </SocialItems>
             <SocialItems>
-                <a href={basicInfo.linkedInLink} rel="noreferrer" target="_blank">
+                <A href={basicInfo.linkedInLink} rel="noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faLinkedin} size="xl" />
-                </a>
+                </A>
             </SocialItems>
             <SocialItems>
-                <a href={basicInfo.twitterLink} rel="noreferrer" target="_blank">
+                <A href={basicInfo.twitterLink} rel="noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faTwitter} size="xl" />
-                </a>
+                </A>
             </SocialItems>
             <SocialItems>
-                <a href={basicInfo.githubLink} rel="noreferrer" target="_blank">
+                <A href={basicInfo.githubLink} rel="noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faGithub} size="xl" />
-                </a>
+                </A>
             </SocialItems>
             <SocialItems>
-                <a href={basicInfo.youTubeLink} rel="noreferrer" target="_blank">
+                <A href={basicInfo.youTubeLink} rel="noreferrer" target="_blank">
                     <FontAwesomeIcon icon={faYoutube} size="xl" />
-                </a>
+                </A>
             </SocialItems>
 
         </SocialContainer>
@@ -123,7 +125,7 @@ const ContactInfo = () => {
             <AddressContainer>
                 <AddressItems>
                     <AddressIcons>
-                        <FontAwesomeIcon icon={faLocationDot} size="lg" color="#ff7055" />
+                        <FontAwesomeIcon icon={faLocationDot} size="lg" color={COLORS_LIGHT.ACCENT} />
                     </AddressIcons>
                     <div>
                         {basicInfo.addressRoom}
@@ -135,7 +137,7 @@ const ContactInfo = () => {
                 </AddressItems>
                 <AddressItems>
                     <AddressIcons>
-                        <FontAwesomeIcon icon={faPhone} size="lg" color="#ff7055" />
+                        <FontAwesomeIcon icon={faPhone} size="lg" color={COLORS_LIGHT.ACCENT} />
                     </AddressIcons>
                     <div>
                         {basicInfo.phoneNumber}
@@ -143,7 +145,7 @@ const ContactInfo = () => {
                 </AddressItems>
                 <AddressItems>
                     <AddressIcons>
-                        <FontAwesomeIcon icon={faAt} size="lg" color="#ff7055" />
+                        <FontAwesomeIcon icon={faAt} size="lg" color={COLORS_LIGHT.ACCENT} />
                     </AddressIcons>
                     <div>
                         {basicInfo.email}
@@ -177,7 +179,7 @@ const RecentUpdates = () => {
                     recentNewsJSON.map((news) => (
                         <NewsItems>
                             <NewsImageContainer>
-                                <img src={news.imgUrl !== "" ? news.imgUrl : "https://storage.googleapis.com/proudcity/mebanenc/uploads/2021/03/placeholder-image-300x225.png"} alt="news thumbnail" width={"100%"} style={{ width: "200px", border: "1px solid #909090" }} />
+                                <img src={news.imgUrl !== "" ? news.imgUrl : "./placeholder.jpg"} alt="news thumbnail" width={"100%"} style={{ width: "200px", border: "1px solid " + COLORS_LIGHT.MEDIUM_GRAY }} />
                             </NewsImageContainer>
                             <CustomParagraph title={news.title}>
                                 {news.body}
@@ -230,7 +232,6 @@ const InfoContainer = styled.div({
     // border: "1px solid red",
     width: "30%",
     // height: 800,
-    // backgroundColor: "#edf1f9",
     // paddingTop: 50,
     // display: "flex",
     // flexDirection: "column",
@@ -238,8 +239,7 @@ const InfoContainer = styled.div({
     // alignItems: "center",
 })
 const AddressContainer = styled.div({
-    fontFamily: "Gotham",
-    color: "#505050",
+    color: COLORS_LIGHT.DARK_GRAY,
     lineHeight: "24px",
     // border: "1px solid green",
 
@@ -279,7 +279,7 @@ const SocialItems = styled.div({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: "white",
-    color: "#707070",
+    color: COLORS_LIGHT.MEDIUM_GRAY,
     margin: "0px 35px",
     cursor: "pointer"
 })
@@ -287,7 +287,7 @@ const SocialItems = styled.div({
 const CoverContainer = styled.div({
     // border: "1px solid green",
     height: 800,
-    backgroundColor: "#edf1f9",
+    backgroundColor: COLORS_LIGHT.SECONDARY_BG,
     paddingTop: 50,
     display: "flex",
     flexDirection: "column",
@@ -345,7 +345,6 @@ const MiddleContainer = styled.div({
     padding: "15px",
     margin: "15px",
     maxWidth: "1500px",
-    // backgroundColor: "#edf1f9",
     // paddingTop: 50,
     display: "flex",
     flexDirection: "row",

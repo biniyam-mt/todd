@@ -1,6 +1,7 @@
 import { faPersonDigging } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import styled from "styled-components"
+import { COLORS_LIGHT } from "./Values"
 
 export const UnderConstruction = () => {
     return (
@@ -19,6 +20,6 @@ const Container = styled.div({
     justifyContent: "start",
     alignItems: "center",
     padding: "50px 0px",
-    color: "#707070"
+    color: COLORS_LIGHT.MEDIUM_GRAY
 
 })

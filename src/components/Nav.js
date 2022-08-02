@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react"
 import styled from "styled-components"
+import { Link, useLocation } from 'react-router-dom'
+import { COLORS_LIGHT } from "./Values";
 
-export const Nav = ({ activeTab, setActiveTab }) => {
+export const Nav = () => {
+
+    const currentPath = useLocation().pathname;
     const [navBarColor, setNavBarColor] = useState("trans")
 
     const listenScrollEvent = (event) => {
@@ -10,7 +14,6 @@ export const Nav = ({ activeTab, setActiveTab }) => {
         } else {
             return setNavBarColor("white")
         }
-        // setNavBarColor(window.scrollY)
     }
     useEffect(() => {
         window.addEventListener('scroll', listenScrollEvent);
@@ -20,34 +23,45 @@ export const Nav = ({ activeTab, setActiveTab }) => {
     }, []);
     return (
         <NavContainer style={{ backgroundColor: navBarColor }}>
-            <TitleContainer onClick={() => { setActiveTab("home") }}>
+            <TitleContainer >
                 <Title>
-                    TODD AUSTIN
+                    <Link to={"/toddaustin/"}>
+                        <NavText>
+                            TODD AUSTIN
+                        </NavText>
+                    </Link>
                 </Title>
-
-                <Beacon active={activeTab === "home"} />
+                <Beacon active={currentPath === "/toddaustin/"} />
 
             </TitleContainer>
             <NavItemsContainer>
-                <NavItem onClick={() => { setActiveTab("research") }} active={activeTab === "research"}>
-                    <NavBeacon active={activeTab === "research"} />
-                    RESEARCH
+                <NavItem active={currentPath === "/toddaustin/research"}>
+                    <NavBeacon active={currentPath === "/toddaustin/research"} />
+                    <Link to={"/toddaustin/research"}>
+                        <NavText>
+                            RESEARCH
+                        </NavText>
+                    </Link>
                 </NavItem>
-                <NavItem onClick={() => { setActiveTab("lab") }} active={activeTab === "lab"}>
-                    <NavBeacon active={activeTab === "lab"} />
-                    AUSTIN-LAB
+                <NavItem active={currentPath === "/toddaustin/austin-lab"}>
+                    <NavBeacon active={currentPath === "/austin-lab"} />
+                    <Link to={"/toddaustin/austin-lab"}>
+                        <NavText>
+                            AUSTIN-LAB
+                        </NavText>
+                    </Link>
                 </NavItem>
-                <NavItem onClick={() => { setActiveTab("news") }} active={activeTab === "news"}>
-                    <NavBeacon active={activeTab === "news"} />
-                    NEWS
-                </NavItem>
-                <NavItem onClick={() => { setActiveTab("teaching") }} active={activeTab === "teaching"}>
-                    <NavBeacon active={activeTab === "teaching"} />
-                    TEACHING
+                <NavItem active={currentPath === "/toddaustin/teaching"}>
+                    <NavBeacon active={currentPath === "/toddaustin/teaching"} />
+                    <Link to={"/toddaustin/teaching"}>
+                        <NavText>
+                            TEACHING
+                        </NavText>
+                    </Link>
                 </NavItem>
             </NavItemsContainer>
             <DarkModeContainer>
-                DARK MODE
+                {/* DARK MODE */}
             </DarkModeContainer>
         </NavContainer>
     )
@@ -80,13 +94,12 @@ const TitleContainer = styled.div({
 })
 const Title = styled.div({
     // border: "1px solid red",
-    fontFamily: "Gotham ",
     fontSize: "115%",
     fontWeight: 600
 
 })
 const Beacon = styled('div')`
-    background-color: ${(props) => props.active ? "#ff7055" : "transparent"};
+    background-color: ${(props) => props.active ? COLORS_LIGHT.ACCENT : "transparent"};
     height: 5px;
     width: 15px;
 `
@@ -116,7 +129,7 @@ const NavItem = styled('div')`
 `
 
 const NavBeacon = styled('div')`
-    background-color: ${(props) => props.active ? "#ff7055" : "transparent"};
+    background-color: ${(props) => props.active ? COLORS_LIGHT.ACCENT : "transparent"};
     height: 3px;
     width: 20px
 
@@ -125,9 +138,16 @@ const NavBeacon = styled('div')`
 
 const DarkModeContainer = styled.div({
     // border: "1px solid red",
-    fontFamily: "Gotham",
     fontWeight: 500,
     fontSize: "85%",
+
+
+})
+
+const NavText = styled.span({
+    // border: "1px solid red",
+    color: "black",
+    textDecoration: "none",
 
 
 })

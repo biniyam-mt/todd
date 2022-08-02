@@ -1,14 +1,23 @@
-import { useState } from "react"
-import { Router } from "./Router"
 import { Nav } from "./Nav"
 import { Footer } from "./Footer"
+import { BrowserRouter as BRouter, Route, Routes } from 'react-router-dom'
+import { TeachingPage } from "./pages/TeachingPage"
+import { LabPage } from "./pages/LabPage"
+import { ResearchPage } from "./pages/ResearchPage"
+import { HomePage } from "./pages/HomePage"
 
 export const Root = () => {
-    const [activeTab, setActiveTab] = useState("home")
     return (
         <div>
-            <Nav activeTab={activeTab} setActiveTab={setActiveTab} />
-            <Router activeTab={activeTab} />
+            <BRouter>
+                <Nav />
+                <Routes>
+                    <Route exact path="/toddaustin/" element={<HomePage />} />
+                    <Route exact path="/toddaustin/research" element={<ResearchPage />} />
+                    <Route exact path="/toddaustin/austin-lab" element={<LabPage />} />
+                    <Route exact path="/toddaustin/teaching" element={<TeachingPage />} />
+                </Routes>
+            </BRouter>
             <Footer />
         </div>
     )
