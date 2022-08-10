@@ -1,6 +1,6 @@
 import { UnderConstruction } from "./UnderConstruction"
 
-export const SoftwaresList = () => {
+export const SoftwaresList = ({ researchContent }) => {
     return (
         <div>
             <UnderConstruction />
