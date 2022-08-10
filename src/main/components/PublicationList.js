@@ -10,7 +10,7 @@ export const PublicationList = ({ publicationRecord }) => {
     return (
         <PublicationContainer>
             {
-                publicationRecord.map((publication) => (
+                publicationRecord && publicationRecord.map((publication) => (
                     <PublicationItem publication={publication} />
                 ))
             }

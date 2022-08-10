@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import styled from "styled-components"
 import { Link, useLocation } from 'react-router-dom'
 import { COLORS_LIGHT } from "../custom/Values";
+import basicInfo from "../content/basicInfo.json"
 
 export const Nav = () => {
 
@@ -27,7 +28,7 @@ export const Nav = () => {
                 <Title>
                     <Link to={"/toddaustin/"}>
                         <NavText>
-                            TODD AUSTIN
+                            {basicInfo.fullName.toUpperCase()}
                         </NavText>
                     </Link>
                 </Title>

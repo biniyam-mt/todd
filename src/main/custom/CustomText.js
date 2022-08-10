@@ -2,11 +2,21 @@ import { useState } from "react";
 import styled from "styled-components"
 import { COLORS_LIGHT } from "./Values";
 
-export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
+export const CustomParagraph = ({ title = "", body = "", display = "trimmed" }) => {
+
     let limit = 300
-    let trimmedContent = children.length > limit ? `${children.slice(0, limit)} ...` : children;
-    const [content, setContent] = useState(display === "full" ? children : trimmedContent);
+    let trimmedContent = body.slice(0, limit);
+    let overflowContent = body.slice(limit);
+
+
+    let assigned = display === "full" ? body : trimmedContent
+    const [content, setContent] = useState(assigned);
     const [detail, setDetail] = useState(display === "full" ? "full" : "trimmed");
+
+    console.log("received: ", body.length)
+    console.log("display: ", display)
+    console.log("trimmed: ", trimmedContent.length)
+    console.log("content: ", content.length)
 
 
     return (
@@ -16,9 +26,12 @@ export const CustomParagraph = ({ title, children, display = "trimmed" }) => {
                 <CustomTitleDiv>{title}</CustomTitleDiv>
             </Header>
             <Body>
-                {content}
-                {children.length > limit && detail === "trimmed" && <ReadMore onClick={() => { setContent(children); setDetail("full") }}>Show More</ReadMore>}
-                {children.length > limit && detail === "full" && <ReadMore onClick={() => { setContent(trimmedContent); setDetail("trimmed") }}>Show Less</ReadMore>}
+                {trimmedContent}
+                {detail === "full" && overflowContent}
+
+
+                {body.length > limit && detail === "trimmed" && <><span>...</span><ReadMore onClick={() => { setDetail("full") }}>Show More</ReadMore></>}
+                {body.length > limit && detail === "full" && <ReadMore onClick={() => { setDetail("trimmed") }}>Show Less</ReadMore>}
             </Body>
         </CustomDiv>
     )

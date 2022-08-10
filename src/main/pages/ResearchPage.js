@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import styled from "styled-components"
 import { TalksList } from "../components/TalksList";
 import { SoftwaresList } from "../components/SoftwaresList";
@@ -8,23 +8,36 @@ import { COLORS_LIGHT } from "../custom/Values";
 
 export const ResearchPage = () => {
     const [activeTab, setActiveTab] = useState("publications");
+    const [researchContent, setResearchContent] = useState({});
+
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/biniyam-mt/content/main/research.json')
+            .then(res => res.json())
+            .then(json => {
+                //json vaiable contains object with data
+                setResearchContent(json);
+                console.log(json);
+            })
+    }, [])
+
+
     return (
         <Content>
-            <ResearchBio />
+            <ResearchBio researchContent={researchContent} />
             <InnerContainer>
                 <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-                <TabContent activeTab={activeTab} />
+                <TabContent activeTab={activeTab} researchContent={researchContent} />
             </InnerContainer>
         </Content>
     )
 }
-const ResearchBio = () => {
+const ResearchBio = ({ researchContent }) => {
+
+    console.log("sent: ", researchContent.bio)
     return (
         <ResearchBioContainer>
             <SectionContainer>
-                <CustomParagraph title={"RESEARCH INTEREST"}>
-                    Et elit sunt enim elit irure. Sit sunt in sint id do amet qui esse ad quis magna. Nostrud ut veniam pariatur pariatur amet nisi enim anim quis sunt. Sit commodo voluptate sunt duis veniam irure nulla amet nisi.Amet qui id ad pariatur. Aliquip cupidatat dolor duis elit minim ullamco velit ipsum dolor non. Consectetur proident mollit consectetur in occaecat fugiat exercitation consectetur aliqua anim sint ea aliquip. Dolore aliquip dolore eiusmod dolore voluptate quis irure adipisicing nisi dolor elit fugiat Lorem do. Commodo aliqua aliqua anim duis. Labore ipsum sit laborum qui aute consectetur adipisicing reprehenderit cupidatat do consequat in ea. Minim cupidatat culpa mollit fugiat.Sit et sit nostrud laborum veniam incididunt ad pariatur anim. Eiusmod magna consectetur ipsum in mollit duis laborum dolore dolor culpa ex sit in reprehenderit. Ad sit laborum amet id laborum incididunt aliqua ipsum sit enim dolore. Occaecat ex aute tempor exercitation. Tempor eu labore et nisi ea ullamco pariatur magna in eiusmod aliqua mollit. Occaecat ipsum amet minim cillum.
-                </CustomParagraph >
+                <CustomParagraph title={"RESEARCH INTEREST"} body={researchContent.bio || ""} />
             </SectionContainer>
         </ResearchBioContainer>
     )
@@ -40,15 +53,15 @@ const Tabs = ({ activeTab, setActiveTab }) => {
     )
 }
 
-const TabContent = ({ activeTab }) => {
+const TabContent = ({ activeTab, researchContent }) => {
     const renderSwitch = (activeTab) => {
         switch (activeTab) {
             case "publications":
-                return <PublicationsPage />;
+                return <PublicationsPage researchContent={researchContent} />;
             case "talks":
-                return <TalksList />;
+                return <TalksList researchContent={researchContent} />;
             case "softwares":
-                return <SoftwaresList />;
+                return <SoftwaresList researchContent={researchContent} />;
             default:
                 return;
         }

@@ -3,65 +3,75 @@ import { CustomParagraph, CustomTitle } from "../custom/CustomText"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faAt, faUserGraduate } from '@fortawesome/free-solid-svg-icons'
 import { faLinkedin, faTwitter } from "@fortawesome/free-brands-svg-icons"
-import alabContent from "../content/aLab.json"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel"
 import { COLORS_LIGHT } from "../custom/Values"
 import { CustomSeparator } from "../custom/CustomSeparator"
 import { A } from "../custom/CustomElements"
+import { useState, useEffect } from "react"
 export const LabPage = () => {
+    const [labContent, setLabContent] = useState({});
+    useEffect(() => {
+        fetch('https://raw.githubusercontent.com/biniyam-mt/content/main/aLab.json')
+            .then(res => res.json())
+            .then(json => {
+                //json vaiable contains object with data
+                setLabContent(json);
+            })
+    }, [])
+
     return (<>
-        <CarouselView />
+        <CarouselView labContent={labContent} />
         <Content>
-            <Students />
-            <Presentaions />
-            <Posters />
-            <Interns />
+            <Students labContent={labContent} />
+            <Presentaions labContent={labContent} />
+            <Posters labContent={labContent} />
+            <Interns labContent={labContent} />
         </Content>
     </>
     )
 }
-const CarouselView = () => {
+const CarouselView = ({ labContent }) => {
     return (
         <CarouselContainer>
-            <CarouselDiv>
-
-                <Carousel autoPlay={"true"} infiniteLoop={"true"} interval={"5000"}>
-                    {
-                        alabContent.pictureUrls.map((picture) => (
-                            <CarouselImage>
-                                <img src={picture.url} alt="carousel" />
-                            </CarouselImage>
-                        ))
-                    }
-                </Carousel>
-                <LabBio />
+            <CarouselDiv>{
+                labContent.pictureUrls && (
+                    <Carousel autoPlay={"true"} infiniteLoop={"true"} interval={"5000"}>
+                        {
+                            labContent.pictureUrls.map((picture) => (
+                                <CarouselImage>
+                                    <img src={picture.url} alt="carousel" />
+                                </CarouselImage>
+                            ))
+                        }
+                    </Carousel>)}
+                <LabBio labContent={labContent} />
             </CarouselDiv>
 
         </CarouselContainer >
     )
 }
 
-const LabBio = () => {
+const LabBio = ({ labContent }) => {
     return (
         <SectionContainer>
-            <CustomParagraph title={"WHAT WE DO"}>
-                Et elit sunt enim elit irure. Sit sunt in sint id do amet qui esse ad quis magna. Nostrud ut veniam pariatur pariatur amet nisi enim anim quis sunt. Sit commodo voluptate sunt duis veniam irure nulla amet nisi.Amet qui id ad pariatur. Aliquip cupidatat dolor duis elit minim ullamco velit ipsum dolor non. Consectetur proident mollit consectetur in occaecat fugiat exercitation consectetur aliqua anim sint ea aliquip. Dolore aliquip dolore eiusmod dolore voluptate quis irure adipisicing nisi dolor elit fugiat Lorem do. Commodo aliqua aliqua anim duis. Labore ipsum sit laborum qui aute consectetur adipisicing reprehenderit cupidatat do consequat in ea. Minim cupidatat culpa mollit fugiat.Sit et sit nostrud laborum veniam incididunt ad pariatur anim. Eiusmod magna consectetur ipsum in mollit duis laborum dolore dolor culpa ex sit in reprehenderit. Ad sit laborum amet id laborum incididunt aliqua ipsum sit enim dolore. Occaecat ex aute tempor exercitation. Tempor eu labore et nisi ea ullamco pariatur magna in eiusmod aliqua mollit. Occaecat ipsum amet minim cillum.
-            </CustomParagraph >
+            <CustomParagraph title={"WHAT WE DO"} body={labContent.labBio || ""} />
         </SectionContainer>
     )
 }
 
-const Students = () => {
+const Students = ({ labContent }) => {
     return (
         <SectionContainer>
             <CustomTitle title={"CURRENT STUDENTS"} />
-            <StudentsContainer>
-                {alabContent.students.map((student, idx) => (
+            {
+                labContent.students && (
+                    <StudentsContainer>
+                        {labContent.students.map((student, idx) => (
 
-                    <Student student={student} alignRight={idx % 2 === 0} />
-                ))}
-            </StudentsContainer>
+                            <Student student={student} alignRight={idx % 2 === 0} />
+                        ))}
+                    </StudentsContainer>)}
         </SectionContainer>
     )
 }
@@ -80,9 +90,7 @@ const Student = ({ student, alignRight }) => {
                 </JellyBean>
             </StudentPhotoContainer>
             <StudentBioContainer alignRight={alignRight} fixed>
-                <CustomParagraph title={student.fullName}>
-                    {student.bio}
-                </CustomParagraph>
+                <CustomParagraph title={student.fullName} body={student.bio} />
                 <PersonalWebsite style={{ color: COLORS_LIGHT.ACCENT }} href={student.websiteLink} rel="noreferrer" target="_blank">PERSONAL WEBSITE</PersonalWebsite>
                 <p><FontAwesomeIcon icon={faAt} size="1x" color={COLORS_LIGHT.ACCENT} /> {student.email}</p>
                 <SocialContainer>
@@ -109,93 +117,96 @@ const Student = ({ student, alignRight }) => {
     )
 }
 
-const Presentaions = () => {
+const Presentaions = ({ labContent }) => {
     return (
         <PresentaionsContainer>
             <SectionContainer>
                 <CustomTitle title={"STUDENT PRESENTATIONS"} />
+                {labContent.videos && (<>
+                    <VideoContainer>
+                        {labContent.videos.map((video) => (
+                            <Presentaion>
+                                <VideoFrame>
+                                    <iframe src={video.url} title={video.title} width={"100%"} height={"100%"} />
+                                </VideoFrame>
 
-                <VideoContainer>
-                    {alabContent.videos.map((video) => (
-                        <Presentaion>
-                            <VideoFrame>
-                                <iframe src={video.url} title={video.title} width={"100%"} height={"100%"} />
-                            </VideoFrame>
-
-                            <CustomParagraph title={video.author} >
-                                {video.title}
+                                <CustomParagraph title={video.author} body={video.title} />
                                 <br />
                                 {video.description}
-                            </CustomParagraph>
-                        </Presentaion>
-                    ))}
-                </VideoContainer>
+                            </Presentaion>
+                        ))}
+                    </VideoContainer>
+                </>)}
             </SectionContainer>
         </PresentaionsContainer>
     )
 }
 
-const Posters = () => {
+const Posters = ({ labContent }) => {
     return (
         <PostersContainer>
             <SectionContainer>
                 <CustomTitle title={"STUDENT POSTERS"} />
+                {labContent.posters && (<>
 
-                <VideoContainer>
-                    {alabContent.posters.map((poster) => (
-                        <Presentaion>
-                            <PosterFrame href={poster.url} target="_blank" rel="noreferrer">
-                                <img src={poster.coverImage} alt="poster" width={"100%"} height={"100%"} />
-                            </PosterFrame>
+                    <VideoContainer>
+                        {labContent.posters.map((poster) => (
+                            <Presentaion>
+                                <PosterFrame href={poster.url} target="_blank" rel="noreferrer">
+                                    <img src={poster.coverImage} alt="poster" width={"100%"} height={"100%"} />
+                                </PosterFrame>
 
-                            <CustomParagraph title={poster.author} >
-                                {poster.title}
+                                <CustomParagraph title={poster.author} body={poster.title} />
                                 <br />
                                 {poster.description}
-                            </CustomParagraph>
-                        </Presentaion>
-                    ))}
-                </VideoContainer>
+                            </Presentaion>
+                        ))}
+                    </VideoContainer>
+                </>
+                )}
             </SectionContainer>
         </PostersContainer>
     )
 }
-const Interns = () => {
+const Interns = ({ labContent }) => {
     return (
         <InternsContainer>
 
             <SectionContainer>
-                <CustomParagraph title={"UNDERGRADUATE RESEARCHERS"} >
-                    Amet nostrud aliquip quis aliqua aliquip sunt qui ut tempor ea minim amet. Aute labore quis tempor sint sint amet exercitation fugiat qui velit sit amet qui aute. Velit ut reprehenderit labore dolor aute reprehenderit eu proident minim cupidatat Lorem eiusmod. Elit consectetur aliquip reprehenderit ex velit exercitation.Elit consectetur aliquip reprehenderit ex velit exercitation.
-                </CustomParagraph>
-                <CustomSeparator tag={"2022"} />
-                <StudentsContainer>
-                    {alabContent.undergrads.filter(student => student.year === 2022).map((student, idx) => (
+                {labContent.undergradProgramBio && (
+                    <CustomParagraph title={"UNDERGRADUATE RESEARCHERS"} body={labContent.undergradProgramBio} />
+                )}
+                {labContent.undergrads && (<>
 
-                        <Intern student={student} alignRight={true} width={"1200px"} />
-                    ))}
-                </StudentsContainer>
-                <CustomSeparator tag={"2021"} />
-                <StudentsContainer>
-                    {alabContent.undergrads.filter(student => student.year === 2021).map((student, idx) => (
+                    <CustomSeparator tag={"2022"} />
+                    <StudentsContainer>
+                        {labContent.undergrads.filter(student => student.year === 2022).map((student, idx) => (
 
-                        <Intern student={student} alignRight={true} width={"1200px"} />
-                    ))}
-                </StudentsContainer>
-                <CustomSeparator tag={"2020"} />
-                <StudentsContainer>
-                    {alabContent.undergrads.filter(student => student.year === 2020).map((student, idx) => (
+                            <Intern student={student} alignRight={true} width={"1200px"} />
+                        ))}
+                    </StudentsContainer>
+                    <CustomSeparator tag={"2021"} />
+                    <StudentsContainer>
+                        {labContent.undergrads.filter(student => student.year === 2021).map((student, idx) => (
 
-                        <Intern student={student} alignRight={true} width={"1200px"} />
-                    ))}
-                </StudentsContainer>
-                <CustomSeparator tag={"2019"} />
-                <StudentsContainer>
-                    {alabContent.undergrads.filter(student => student.year === 2019).map((student, idx) => (
+                            <Intern student={student} alignRight={true} width={"1200px"} />
+                        ))}
+                    </StudentsContainer>
+                    <CustomSeparator tag={"2020"} />
+                    <StudentsContainer>
+                        {labContent.undergrads.filter(student => student.year === 2020).map((student, idx) => (
 
-                        <Intern student={student} alignRight={true} width={"1200px"} />
-                    ))}
-                </StudentsContainer>
+                            <Intern student={student} alignRight={true} width={"1200px"} />
+                        ))}
+                    </StudentsContainer>
+                    <CustomSeparator tag={"2019"} />
+                    <StudentsContainer>
+                        {labContent.undergrads.filter(student => student.year === 2019).map((student, idx) => (
+
+                            <Intern student={student} alignRight={true} width={"1200px"} />
+                        ))}
+                    </StudentsContainer>
+                </>)}
             </SectionContainer>
         </InternsContainer>
     )
@@ -207,9 +218,7 @@ const Intern = ({ student }) => {
             <StudentDiv alignRight={true} width={"1200px"}>
                 <img src={student.photoUrl} alt="student" height={"150px"} />
                 <StudentBioContainer alignRight={true}>
-                    <CustomParagraph title={student.fullName}>
-                        {student.bio}
-                    </CustomParagraph>
+                    <CustomParagraph title={student.fullName} body={student.bio} />
                     <PersonalWebsite style={{ color: COLORS_LIGHT.ACCENT }} href={student.websiteLink} rel="noreferrer" target="_blank">PERSONAL WEBSITE</PersonalWebsite>
                 </StudentBioContainer>
                 <InternPresentations>

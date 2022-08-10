@@ -1,0 +1,157 @@
+{
+    "bio": "Anim proident irure labore fugiat amet. Fugiat adipisicing consequat nulla amet. Occaecat ullamco non sit ad anim dolor ea mollit est pariatur eu. Ut Lorem labore anim duis fugiat. Magna incididunt nostrud aute proident exercitation aliqua exercitation voluptate cupidatat consequat consectetur consectetur. Culpa irure exercitation consectetur qui culpa culpa proident cillum esse nulla sunt do. Reprehenderit quis nisi reprehenderit ex adipisicing cupidatat Lorem.",
+    "publications": [
+        {
+            "title": "Twine: a chisel extension for component-level heterogeneous design",
+            "conference": "2022 Design, Automation & Test in Europe Conference & Exhibition (DATE)",
+            "publisher": "IEEE",
+            "year": 2022,
+            "authors": [
+                "Shibo Chen",
+                "Yonathan Fisseha",
+                "Jean-Baptiste Jeannin",
+                "Todd Austin"
+            ],
+            "citations": 0,
+            "link": "https://ieeexplore.ieee.org/iel7/9774496/9774497/09774555.pdf",
+            "awards": []
+        },
+        {
+            "title": "Morpheus II: A RISC-V Security Extension for Protecting Vulnerable Software and Hardware",
+            "conference": "2021 IEEE International Symposium on Hardware Oriented Security and Trust (HOST)",
+            "publisher": "IEEE",
+            "year": 2021,
+            "authors": [
+                "Austin Harris",
+                "Tarunesh Verma",
+                "Shijia Wei",
+                "Lauren Biernacki",
+                "Alex Kisil",
+                "Misiker Tadesse Aga",
+                "Valeria Bertacco",
+                "Baris Kasikci",
+                "Mohit Tiwari",
+                "Todd Austin"
+            ],
+            "citations": 1,
+            "link": "https://ieeexplore.ieee.org/iel7/9702149/9702266/09702275.pdf",
+            "awards": []
+        },
+        {
+            "title": "Chopin: Composing Cost-Effective Custom Chips with Algorithmic Chiplets",
+            "conference": "2021 IEEE 39th International Conference on Computer Design (ICCD)",
+            "publisher": "IEEE",
+            "year": 2021,
+            "authors": [
+                "Pete Ehrett",
+                "Todd Austin",
+                "Valeria Bertacco"
+            ],
+            "citations": 0,
+            "link": "https://ieeexplore.ieee.org/iel7/9643591/9643617/09643660.pdf",
+            "awards": []
+        },
+        {
+            "title": "VIP-Bench: A Benchmark Suite for Evaluating Privacy-Enhanced Computation Frameworks",
+            "conference": "2021 International Symposium on Secure and Private Execution Environment Design (SEED)",
+            "publisher": "IEEE",
+            "year": 2021,
+            "authors": [
+                "Lauren Biernacki",
+                "Meron Zerihun Demissie",
+                "Kidus Birkayehu Workneh",
+                "Galane Basha Namomsa",
+                "Plato Gebremedhin",
+                "Fitsum Assamnew Andargie",
+                "Brandon Reagen",
+                "Todd Austin"
+            ],
+            "citations": 0,
+            "link": "https://ieeexplore.ieee.org/iel7/9604762/9604351/09604804.pdf",
+            "awards": []
+        },
+        {
+            "title": "DIVA: A reliable substrate for deep submicron microarchitecture design",
+            "conference": "MICRO-32. Proceedings of the 32nd Annual ACM/IEEE International Symposium on Microarchitecture",
+            "publisher": "IEEE",
+            "year": 1999,
+            "authors": [
+                "Todd Austin"
+            ],
+            "citations": 1011,
+            "link": "https://ieeexplore.ieee.org/iel5/6577/17552/00809458.pdf",
+            "awards": [
+                "Best Paper Award"
+            ]
+        },
+        {
+            "title": "A2: Analog malicious hardware",
+            "conference": "2016 IEEE symposium on security and privacy (SP)",
+            "publisher": "IEEE",
+            "year": 2016,
+            "authors": [
+                "Kaiyuan Yang",
+                "Matthew Hicks",
+                "Qing Dong",
+                "Todd Austin",
+                "Dennis Sylvester"
+            ],
+            "citations": 227,
+            "link": "https://ieeexplore.ieee.org/iel7/7528194/7546461/07546493.pdf",
+            "awards": [
+                "Distinguished Paper Award"
+            ]
+        },
+        {
+            "title": "Dynamic dependency analysis of ordinary programs",
+            "conference": "Proceedings of the 19th annual international symposium on Computer architecture",
+            "publisher": "",
+            "year": 1992,
+            "authors": [
+                "Todd Austin",
+                "Gurindar Sohi"
+            ],
+            "citations": 251,
+            "link": "https://dl.acm.org/doi/pdf/10.1145/139669.140395",
+            "awards": []
+        },
+        {
+            "title": "Razor: circuit-level correction of timing errors for low-power operation",
+            "conference": "IEEE Micro",
+            "publisher": "IEEE",
+            "year": 2004,
+            "authors": [
+                "Dan Ernst",
+                "Shidhartha Das",
+                "Seokwoo Lee",
+                "David Blaauw",
+                "Todd Austin",
+                "Trevor Mudge",
+                "Nam Sung Kim",
+                "Krisztián Flautner"
+            ],
+            "citations": 513,
+            "link": "https://ieeexplore.ieee.org/iel5/40/30203/01388152.pdf",
+            "awards": [
+                "Best Paper Award",
+                "Test of Time Award"
+            ]
+        },
+        {
+            "title": "Fetch directed instruction prefetching",
+            "conference": "MICRO-32. Proceedings of the 32nd Annual ACM/IEEE International Symposium on Microarchitecture",
+            "publisher": "IEEE",
+            "year": 1999,
+            "authors": [
+                "Glenn Reinman",
+                "Brad Calder",
+                "Todd Austin"
+            ],
+            "citations": 145,
+            "link": "https://ieeexplore.ieee.org/iel5/6577/17552/00809439.pdf",
+            "awards": [
+                "Test of Time Award"
+            ]
+        }
+    ]
+}

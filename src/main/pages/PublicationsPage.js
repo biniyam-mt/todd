@@ -1,13 +1,12 @@
 import { useCallback, useMemo, useState } from "react"
 import styled from "styled-components"
-import publicationRecord from "../content/publications.json"
 import { COLORS_LIGHT } from "../custom/Values"
 import { PublicationList } from "../components/PublicationList"
 
-export const PublicationsPage = () => {
+export const PublicationsPage = ({ researchContent }) => {
     const [sortBy, setSortBy] = useState("year");
     const [filterBy, setFilterBy] = useState("all");
-    // const [data, setData] = useState(publicationRecord);
+
 
     const sortByYear = useCallback((data) => {
         return data.sort((a, b) => b.year - a.year);
@@ -31,17 +30,20 @@ export const PublicationsPage = () => {
 
 
     const sortedAndFiltered = useMemo(() => {
-        const filtered = filter(publicationRecord);
-        if (filtered.length === 0) {
-            return [];
-        }
-        if (sortBy === "year") {
-            return sortByYear(filtered);
-        } else {
-            return sortByCitations(filtered);
+        const filtered = filter(researchContent.publications);
+        if (filtered) {
+
+            if (filtered.length === 0) {
+                return [];
+            }
+            if (sortBy === "year") {
+                return sortByYear(filtered);
+            } else {
+                return sortByCitations(filtered);
+            }
         }
 
-    }, [sortBy, sortByCitations, sortByYear, filter])
+    }, [sortBy, sortByCitations, sortByYear, filter, researchContent.publications])
 
 
 

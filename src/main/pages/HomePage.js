@@ -52,7 +52,7 @@ const Cover = ({ scroll }) => {
                     </svg>
                 </JellyBean>
                 <BgName scroll={scroll}>
-                    TODD AUSTIN
+                    {basicInfo.fullName.toUpperCase()}
                 </BgName>
                 <Portrait>
                     <img src={basicInfo.photoUrl} alt="todd" height={"900px"} style={{}} />
@@ -102,9 +102,7 @@ const Biography = () => {
     return (
         <div style={{ width: "50%", marginRight: "15px" }}>
 
-            <CustomParagraph title={"BIOGRAPHY"}>
-                {basicInfo.personalBiography}
-            </CustomParagraph>
+            <CustomParagraph title={"BIOGRAPHY"} body={basicInfo.personalBiography} />
         </div>
 
 
@@ -113,15 +111,13 @@ const Biography = () => {
 const ContactInfo = () => {
     return (
         <InfoContainer>
-            <CustomParagraph title={"CONTACT INFORMATION"} display="full">
-
-                <b>
-                    {basicInfo.fullName}
-                </b>
-                <br />
-                {basicInfo.title}
-
-            </CustomParagraph>
+            <CustomTitle title={"CONTACT INFORMATION"} />
+            <b>
+                {basicInfo.fullName}
+            </b>
+            <br />
+            <br />
+            {basicInfo.title}
             <AddressContainer>
                 <AddressItems>
                     <AddressIcons>
@@ -181,9 +177,7 @@ const RecentUpdates = () => {
                             <NewsImageContainer>
                                 <img src={news.imgUrl !== "" ? news.imgUrl : "./placeholder.jpg"} alt="news thumbnail" width={"100%"} style={{ width: "200px", border: "1px solid " + COLORS_LIGHT.MEDIUM_GRAY }} />
                             </NewsImageContainer>
-                            <CustomParagraph title={news.title}>
-                                {news.body}
-                            </CustomParagraph>
+                            <CustomParagraph title={news.title} body={news.body} />
                         </NewsItems>
                     ))
                 }

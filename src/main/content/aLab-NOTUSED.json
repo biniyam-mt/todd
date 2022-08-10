@@ -17,7 +17,7 @@
             "legend": "picture legend"
         }
     ],
-    "bio": "",
+    "labBio": "Fugiat voluptate proident Lorem commodo duis occaecat minim magna cupidatat. Aliqua proident ad dolore ad enim Lorem commodo aute eu veniam est non incididunt. Commodo amet proident cupidatat sunt ad magna aliquip quis culpa sit exercitation cillum ex. Cillum sint tempor deserunt ut minim laboris ullamco est ea elit aute Lorem aute incididunt. Ut nulla est do et.",
     "students": [
         {
             "fullName": "Lauren Biernacki",
@@ -90,6 +90,7 @@
             "googleScholarLink": "https://scholar.google.com/citations?user=iVDODqEAAAAJ&hl=en"
         }
     ],
+    "undergradProgramBio": "Reprehenderit exercitation quis fugiat non consectetur tempor consequat dolor non magna duis mollit dolor non. Elit occaecat anim Lorem eiusmod aliquip minim nulla nostrud mollit reprehenderit. Sunt mollit voluptate Lorem do minim. Do culpa eu minim ipsum dolor enim anim aliqua. Dolore magna commodo proident qui.",
     "undergrads": [
         {
             "fullName": "Natneam Assefa",

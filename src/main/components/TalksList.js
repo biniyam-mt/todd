@@ -1,19 +1,16 @@
-import talks from "../content/talks.json"
 import styled from "styled-components"
 import { CustomParagraph } from "../custom/CustomText"
-export const TalksList = () => {
+export const TalksList = ({ researchContent }) => {
     return (
         <div>
             <VideoContainer>
-                {talks.map((talk) => (
+                {researchContent.talks.map((talk) => (
                     <Presentaion>
                         <VideoFrame>
                             <iframe src={talk.url} title={talk.title} width={"100%"} height={"100%"} />
                         </VideoFrame>
 
-                        <CustomParagraph title={talk.title} >
-                            {talk.description}
-                        </CustomParagraph>
+                        <CustomParagraph title={talk.title} body={talk.description} />
                     </Presentaion>
                 ))}
             </VideoContainer>
